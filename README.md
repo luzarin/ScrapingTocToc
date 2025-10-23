@@ -9,4 +9,4 @@ Y dependiendo de los datos a extraer: idPoligono, tipoPropiedad y operacion
 Unifica múltiples CSVs, crea columna SUP TOTAL (máximo entre superficies) y elimina duplicados por URL.
 
 ## 3d.py
-Genera mapa 3D interactivo con PyDeck. Altura proporcional a UF/M² (raíz cuadrada)
+Genera mapa 3D interactivo (HTML) con PyDeck. Altura proporcional a UF/M² (raíz cuadrada)
