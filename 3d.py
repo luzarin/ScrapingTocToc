@@ -7,7 +7,7 @@ grilla = gpd.read_file("C:/Repos/Scrape Toc Toc Propiedades/grilla_con_datos.shp
 grilla = grilla.to_crs("EPSG:4326")
 grilla = grilla.dropna(subset=['UF/M2_mean'])
 
-# Función para colores basada en rangos específicos
+# Función colores rangos específicos
 def get_color(value):
     if value <= 16:
         return [255, 245, 240, 220]  # #fff5f0
@@ -53,7 +53,7 @@ layer = pdk.Layer(
     pickable=True,
     extruded=True,
     wireframe=False,
-    elevation_scale=8  # Ajusta si quieres más/menos altura
+    elevation_scale=8  # AJUSTE Z
 )
 
 center_lat = grilla.geometry.centroid.y.mean()
@@ -75,4 +75,4 @@ r = pdk.Deck(
 )
 
 r.to_html('C:/Jupyter/Scrape Toc Toc Propiedades/mapa_3d.html')
-print("✓ Mapa con colores por rangos y altura proporcional")
+print("✓ Mapa listo")

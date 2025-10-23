@@ -5,7 +5,7 @@ import time
 def scrape_toctoc():
     url = "https://www.toctoc.com/api/mapa/GetProps"
     
-    # Headers EXACTOS desde tu navegador (actualizados) / SE CAMBIA COOKIE, REFERER, X-ACCES-TOKEN
+    # Headers; SE CAMBIA COOKIE, REFERER, X-ACCES-TOKEN
     headers = {
         "authority": "www.toctoc.com",
         "accept": "application/json",
@@ -25,7 +25,7 @@ def scrape_toctoc():
         "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE4MS40My4xNDguMjUwIiwiaWF0IjoxNzU5OTM2NzUyLCJleHAiOjE3NjA1NDE1NTJ9.ykXekAFNnmlxoFsfTQiJjDEY8dq_xDmyob6Cg_wSxi8"  # ACTUALIZAR TOKEN 
     }
 
-        # PAYLOAD COMPLETO Y CORRECTO
+        # PAYLOAD
     payload_template = {
         "region": "metropolitana",
         "comuna": "",
@@ -62,7 +62,7 @@ def scrape_toctoc():
         "superficieHastaTerreno": 0,
         "superficieHastaUtil": 0,
         "temporalidad": 0,
-        "tipoPropiedad": "terreno", #DEPARTAMENTO, CASA, terreno
+        "tipoPropiedad": "terreno", #DEPARTAMENTO, CASA, TERRENO
         "viewport": "-33.7,-70.8,-33.3,-70.4",
         "zoom": 10
     }
@@ -73,7 +73,7 @@ def scrape_toctoc():
 
     while True:
         print(f"Obteniendo página {pagina}...")
-        payload = payload_template.copy()  # <--- ESTA LÍNEA DEBE USAR payload_template DEFINIDO ARRIBA
+        payload = payload_template.copy()  # payload definido
         payload["pagina"] = pagina
         
         response = session.post(url, headers=headers, json=payload)
